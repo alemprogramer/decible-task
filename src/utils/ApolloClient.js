@@ -5,16 +5,16 @@ import { ApolloLink } from 'apollo-link';
 
 export function createApolloClient() {
   const httpLink = createHttpLink({
-    uri: 'https://frontend-test-api.aircall.io/graphql',
+    uri: process.env.NEXT_PUBLIC_BASE_URL,
   });
 
   const authLink = setContext((_, { headers }) => {
-    const accessToken =`Bearer ${localStorage.getItem('accessToken')}` ;
+    const accessToken = `Bearer ${localStorage.getItem('accessToken')}`;
 
     return {
       headers: {
         ...headers,
-        Authorization: accessToken
+        Authorization: accessToken,
       },
     };
   });
