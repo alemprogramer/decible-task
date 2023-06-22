@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Form, Input, Button } from "antd";
+import { Form, Input, Button, Spin } from "antd";
 import { useMutation } from "@apollo/client";
 import { LOGIN_MUTATION } from "@/mutation/loginMutation";
 import { useRouter } from "next/router";
+import { LoadingOutlined } from "@ant-design/icons";
 
 const SignInPage = () => {
   const [UserName, setUserName] = useState('String!');
@@ -39,6 +40,8 @@ const SignInPage = () => {
   }
 };
 
+const antIcon = <LoadingOutlined style={{ fontSize: 24, color:'#ffffff' }} spin />
+
   return (
     <div
       style={{
@@ -65,7 +68,7 @@ const SignInPage = () => {
           </Form.Item>
           <Form.Item>
             <Button type="primary" htmlType="submit">
-              Sign In
+            {loading ?<> <Spin  indicator={antIcon} />  loading...</>:'Sign In'}
             </Button>
           </Form.Item>
         </Form>

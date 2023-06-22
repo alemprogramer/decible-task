@@ -14,4 +14,8 @@
   border-left: 1px solid #c1c1c15a;
   border-right: 1px solid #c1c1c15a;
 }
+.fullWidth {
+  width: 100px;
+}
+
 

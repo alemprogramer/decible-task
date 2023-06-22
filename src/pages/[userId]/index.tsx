@@ -8,6 +8,7 @@ import { useRouter } from 'next/router';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Pagination from '@/components/Pagination';
+import SkeletonTable from '@/components/SkeletonTable';
 
 const DataPage = () => {
   const [messageApi, contextHolder] = message.useMessage();
@@ -45,6 +46,8 @@ const DataPage = () => {
     return <h2>No Quotes available</h2>;
   }
 
+  // const antIcon = <LoadingOutlined style={{ fontSize: 24, color:'#000000' }} spin />
+
   return (
     <main className={`${styles.main}`}>
       {contextHolder}
@@ -52,7 +55,8 @@ const DataPage = () => {
       <div className=''>
         <Hero />
         {loading ? (
-          <h1>loading...</h1>
+          <SkeletonTable />
+
         ) : (
           <Table
             dataSource={data?.paginatedCalls?.nodes}
