@@ -1,106 +1,6 @@
 import { Button } from "antd";
 
-export const dataSource = [
-  {
-    callType: "Voice Mail",
-    direction: "Outbound",
-    duration: "80 minutes 23 seconds",
-    durationSeconds: "(4823 seconds)",
-    from: "+33148288105",
-    to: "+33166114113",
-    via: "+33148288105",
-    createdAt: "12-082022",
-    status: "Archived",
-  },
-  {
-    callType: "Answered",
-    direction: "Inbound",
-    duration: "80 minutes 23 seconds",
-    durationSeconds: "(4823 seconds)",
-    from: "+33148288105",
-    to: "+33166114113",
-    via: "+33148288105",
-    createdAt: "12-082022",
-    status: "Unarchive",
-  },
-  {
-    callType: "Missed",
-    direction: "Outbound",
-    duration: "80 minutes 23 seconds",
-    durationSeconds: "(4823 seconds)",
-    from: "+33148288105",
-    to: "+33166114113",
-    via: "+33148288105",
-    createdAt: "12-082022",
-    status: "Archived",
-  },
-  {
-    callType: "Voice Mail",
-    direction: "Outbound",
-    duration: "80 minutes 23 seconds",
-    durationSeconds: "(4823 seconds)",
-    from: "+33148288105",
-    to: "+33166114113",
-    via: "+33148288105",
-    createdAt: "12-082022",
-    status: "Archived",
-  },
-  {
-    callType: "Answered",
-    direction: "Inbound",
-    duration: "80 minutes 23 seconds",
-    durationSeconds: "(4823 seconds)",
-    from: "+33148288105",
-    to: "+33166114113",
-    via: "+33148288105",
-    createdAt: "12-082022",
-    status: "Unarchive",
-  },
-  {
-    callType: "Missed",
-    direction: "Outbound",
-    duration: "80 minutes 23 seconds",
-    durationSeconds: "(4823 seconds)",
-    from: "+33148288105",
-    to: "+33166114113",
-    via: "+33148288105",
-    createdAt: "12-082022",
-    status: "Archived",
-  },
-  {
-    callType: "Voice Mail",
-    direction: "Outbound",
-    duration: "80 minutes 23 seconds",
-    durationSeconds: "(4823 seconds)",
-    from: "+33148288105",
-    to: "+33166114113",
-    via: "+33148288105",
-    createdAt: "12-082022",
-    status: "Archived",
-  },
-  {
-    callType: "Answered",
-    direction: "Inbound",
-    duration: "80 minutes 23 seconds",
-    durationSeconds: "(4823 seconds)",
-    from: "+33148288105",
-    to: "+33166114113",
-    via: "+33148288105",
-    createdAt: "12-082022",
-    status: "Unarchive",
-  },
-  {
-    callType: "Missed",
-    direction: "Outbound",
-    duration: "80 minutes 23 seconds",
-    durationSeconds: "(4823 seconds)",
-    from: "+33148288105",
-    to: "+33166114113",
-    via: "+33148288105",
-    createdAt: "12-082022",
-    status: "Archived",
-  },
-];
+
 
 export const columns = [
   // 1st column
@@ -112,9 +12,9 @@ export const columns = [
       <span
         style={{
           color:
-            record.call_type.toLowerCase() === "Missed".toLowerCase()
+            record.call_type?.toLowerCase() === "Missed".toLowerCase()
               ? "#DB6D81"
-              : record.call_type.toLowerCase() === "Voice Mail".toLowerCase()
+              : record.call_type?.toLowerCase() === "Voice Mail".toLowerCase()
               ? "#566596"
               : "#79E0D6",
         }}
