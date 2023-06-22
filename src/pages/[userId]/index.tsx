@@ -39,7 +39,17 @@ const DataPage = () => {
     data?.paginatedCalls
   );
   if (error) {
-    console.log(error.message);
+    console.log('error',error.message);
+    if(error?.message.toLowerCase() == 'Unauthorized'.toLowerCase()){
+      if(confirm('you session is out , please login again ')){
+        localStorage.clear(); 
+        router.push('/');
+      }else{
+        localStorage.clear(); 
+        router.push('/');
+      }
+
+    }
   }
   if (data?.quotes?.length == 0) {
     return <h2>No Quotes available</h2>;
@@ -188,8 +198,8 @@ const DataPage = () => {
           <Row justify="center" style={{ marginTop: "8px" }}>
             <Col>
               <Typography.Text style={{ textAlign: "center" }}>
-                1 - {Math.floor(data?.paginatedCalls?.totalCount / 10 || 10)} of
-                {data?.paginatedCalls?.totalCount} results
+               { `1 - ${Math.floor(data?.paginatedCalls?.totalCount / 10 || 10)} of 
+                ${data?.paginatedCalls?.totalCount} results`}
               </Typography.Text>
             </Col>
           </Row>
